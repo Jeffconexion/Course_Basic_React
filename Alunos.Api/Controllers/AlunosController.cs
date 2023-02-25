@@ -26,7 +26,7 @@ namespace Alunos.Api.Controllers
 
         [HttpGet]
         [Route("obter/nome")]
-        public async Task<ActionResult<IAsyncEnumerable<Aluno>>> GetAlunosByName([FromQuery]string nome)
+        public async Task<ActionResult<IAsyncEnumerable<Aluno>>> GetAlunosByName([FromQuery] string nome)
         {
             var alunos = await _alunoServices.GetAlunoByName(nome);
             return Ok(alunos);
@@ -46,7 +46,7 @@ namespace Alunos.Api.Controllers
         public async Task<ActionResult> Create([FromBody] Aluno aluno)
         {
             await _alunoServices.CreateAluno(aluno);
-            return CreatedAtRoute(nameof(GetAluno), new {id = aluno.Id}, aluno);           
+            return CreatedAtRoute(nameof(GetAluno), new { id = aluno.Id }, aluno);
         }
 
         [HttpPut]
@@ -54,7 +54,7 @@ namespace Alunos.Api.Controllers
         public async Task<ActionResult> Edit(int id, [FromBody] Aluno aluno)
         {
 
-            if(id == aluno.Id)
+            if (id == aluno.Id)
             {
                 await _alunoServices.UpadateAluno(aluno);
                 return Ok($"Aluno com id={id} foi atualizado com sucesso.");
@@ -71,9 +71,9 @@ namespace Alunos.Api.Controllers
         {
             Aluno aluno = await _alunoServices.GetAluno(id);
 
-            if(aluno is not null)
+            if (aluno is not null)
             {
-               await _alunoServices.DeleteAluno(aluno);
+                await _alunoServices.DeleteAluno(aluno);
                 return Ok($"Aluno com id={id} foi excluído com sucesso.");
             }
             else
