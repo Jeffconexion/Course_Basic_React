@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeffersonricardo\\Documents\\5_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj": {}
+    "C:\\Users\\jeffd\\OneDrive\\Documentos\\2_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeffersonricardo\\Documents\\5_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj": {
+    "C:\\Users\\jeffd\\OneDrive\\Documentos\\2_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffersonricardo\\Documents\\5_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj",
+        "projectUniqueName": "C:\\Users\\jeffd\\OneDrive\\Documentos\\2_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj",
         "projectName": "Alunos.Api",
-        "projectPath": "C:\\Users\\jeffersonricardo\\Documents\\5_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj",
-        "packagesPath": "C:\\Users\\jeffersonricardo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffersonricardo\\Documents\\5_Treinamentos\\Course_Basic_React\\Alunos.Api\\obj\\",
+        "projectPath": "C:\\Users\\jeffd\\OneDrive\\Documentos\\2_Treinamentos\\Course_Basic_React\\Alunos.Api\\Alunos.Api.csproj",
+        "packagesPath": "C:\\Users\\jeffd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jeffd\\OneDrive\\Documentos\\2_Treinamentos\\Course_Basic_React\\Alunos.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jeffersonricardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jeffd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
