@@ -1,0 +1,35 @@
+# Visual Studio Code
+.vscode/
+
+# Arquivos de compilação
+bin/
+obj/
+
+# Arquivos temporários
+*.log
+*.vspscc
+*.vssscc
+*.user
+*.suo
+*.cache
+*.crproj.user
+*.pidb
+*.resharper
+
+# Pasta de packages do NuGet
+## TODO: Descomente a linha abaixo se você estiver usando o gerenciador de pacotes do NuGet
+# packages/
+
+# Arquivos de cache do Visual Studio
+## TODO: Descomente as linhas abaixo se você estiver usando o Visual Studio
+# [Oo]bj/
+# [Bb]in/
+# Generated_Code/
+
+# Outros arquivos
+Thumbs.db
+desktop.ini
+
+# Pasta de publicação do projeto
+## TODO: Descomente a linha abaixo se você estiver publicando seu projeto
+# Publish/
