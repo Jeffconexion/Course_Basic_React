@@ -16,7 +16,7 @@ namespace Alunos.Api.Controllers
         }
 
         [HttpGet]
-        [Route("obter")]
+        [Route("obter/todos")]
         public async Task<ActionResult<IAsyncEnumerable<Aluno>>> GetAlunos()
         {
             var alunos = await _alunoServices.GetAlunos();
@@ -33,8 +33,7 @@ namespace Alunos.Api.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetAluno")]
-        [Route("obter/{id:int}", Name = "GetAluno")]
+        [Route("obter/id/{id:int}", Name = "GetAluno")]
         public async Task<ActionResult<Aluno>> GetAluno(int id)
         {
             var alunos = await _alunoServices.GetAluno(id);
@@ -50,7 +49,7 @@ namespace Alunos.Api.Controllers
         }
 
         [HttpPut]
-        [Route("edit/{id:int}")]
+        [Route("atualizar/{id:int}")]
         public async Task<ActionResult> Edit(int id, [FromBody] Aluno aluno)
         {
 
@@ -66,7 +65,7 @@ namespace Alunos.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("delete/{id:int}")]
+        [Route("excluir/{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             Aluno aluno = await _alunoServices.GetAluno(id);
@@ -82,6 +81,5 @@ namespace Alunos.Api.Controllers
 
             }
         }
-
     }
 }
