@@ -12,6 +12,9 @@ function App() {
 
   const [updateData, setUpdateData] = useState(true);
 
+  //Definindo estado para a modal excluir
+  const [modalExcluir, setModalExcluir] = useState(false);
+
   //Definindo estado para a modal incluir
   const [modalIncluir, setModalIncluir] = useState(false);
 
@@ -55,7 +58,14 @@ function App() {
 
     if (opcao === "Editar") {
       abrirFecharModalEditar();
+    } else {
+      abrirFecharModalExcluir();
     }
+  }
+
+  //Criar método abrir e fechar modal
+  const abrirFecharModalExcluir = () => {
+    setModalExcluir(!modalExcluir);
   }
 
   const getAlunos = async () => {
@@ -86,7 +96,6 @@ function App() {
     alunoSelecionado.idade = parseInt(alunoSelecionado.idade);
     await axios.put(baseUrl + "atualizar/" + alunoSelecionado.id, alunoSelecionado)
       .then(response => {
-        var resposta = response.data;
         var dadosAuxiliar = data;
         dadosAuxiliar.forEach(aluno => {
           if (aluno.id === alunoSelecionado.id) {
@@ -101,6 +110,16 @@ function App() {
       });
   };
 
+  const pedidoDelete = async () => {
+    await axios.delete(baseUrl + "excluir/" + alunoSelecionado.id)
+      .then(response => {
+        setData(data.filter(aluno => aluno.id !== response.data));
+        abrirFecharModalExcluir();
+        setUpdateData(true);
+      }).catch(error => {
+        console.log("Erro ao excluir o aluno: " + error);
+      });
+  };
 
   useEffect(() => {
     if (updateData) {
@@ -198,6 +217,17 @@ function App() {
         </ModalFooter>
       </Modal>
 
+
+      {/* CRIAÇÃO DA MODAL - DELETAR*/}
+      <Modal isOpen={modalExcluir}>
+        <ModalBody>
+          Confirma a exclusão deste(a) aluno(a) : {alunoSelecionado && alunoSelecionado.nome}?
+        </ModalBody>
+        <ModalFooter>
+          <button className="btn btn-danger" onClick={() => pedidoDelete()}>Sim</button>
+          <button className="btn btn-secondary" onClick={() => abrirFecharModalExcluir()}>Não</button>
+        </ModalFooter>
+      </Modal>
     </div>
   );
 }
